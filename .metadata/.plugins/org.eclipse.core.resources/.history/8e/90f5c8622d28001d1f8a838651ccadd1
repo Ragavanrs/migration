@@ -1,0 +1,43 @@
+package practices.basics;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Remove_repeated {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in=new Scanner(System.in);
+		String st=in.nextLine();
+		char[] val=st.toCharArray();
+		Arrays.sort(val);
+		int len=rem(val,val.length);
+		for (int i = 0; i<len; i++) {
+			System.out.println(val[i]);
+		}
+		in.close();
+	}
+	public static int rem(char[]arr,int x) {
+		
+		if (x==0||x==1) {
+			return x;
+		}
+		char[] temp=arr;
+		int j=0;
+		for(int i=0;i<x-1;i++) {
+			if(arr[i]!=arr[i+1]) {
+				temp[j++]=arr[i];
+			}
+		}
+		for(int i=0;i<temp.length;i++) {
+			arr[i]=temp[i];
+		}
+		
+		return temp.length;
+		
+		
+		
+	}
+
+}

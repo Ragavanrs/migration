@@ -1,0 +1,10 @@
+package practices.basics;
+
+public class String_rev_sent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
