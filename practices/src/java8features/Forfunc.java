@@ -2,7 +2,10 @@ package java8features;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import java.util.stream.Collectors;
@@ -39,6 +42,17 @@ public class Forfunc {
 		System.out.println(y.getName());
 		return null;
 	};
+	
+	Map<String, List<Employee>> t=emp.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+	
+	for (Entry<String, List<Employee>> entry : t.entrySet()) {
+		String key = entry.getKey();
+		List<Employee> val = entry.getValue();
+		
+		System.out.println(key+" "+val );
+		
+	}
+	
 	
 	s.stream().forEach(System.out::println);
 	emp.stream().forEach(e->m.hello(e));
